@@ -1,23 +1,22 @@
-function kolobok (character) {
-     switch (character) {
-             case "дедушка":
-                 console.log("Я от дедушки ушел");
-                 break;
-             case "лиса":
-                 console.log("Меня съели");
-                 break;
-             case "заяц":
-                 console.log("Я от зайца ушел");
-                 break;
-             default:
-                 console.log("Недопустимое значение")
-     }
+export function kolobok(character) {
+  switch (character) {
+    case 'дедушка':
+      return 'Я от дедушки ушёл'
+    case 'заяц':
+      return 'Я от зайца ушёл'
+    case 'лиса':
+      return 'Меня съели'
+    default:
+      return 'Я встретил кого-то неизвестного'
+  }
 }
 
-function newYear (personage) {
-    if (personage === 'Дед Мороз' || personage === 'Снегурочка') {
-        console.log(`${personage}! `.repeat(3));
-    } else {
-        console.log("Персонаж не определен");
-    }
+export function newYear(character) {
+  switch (character) {
+    case 'Дед Мороз':
+    case 'Снегурочка':
+      return `${character}! ${character}! ${character}!`
+    default:
+      return 'Неизвестный персонаж'
+  }
 }
