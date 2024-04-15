@@ -16,9 +16,10 @@ describe('kolobok function', () => {
     expect(result).toBe('Меня съели')
   })
 
-  it('should return a default response for unknown character', () => {
-    const result = kolobok('неизвестный')
-    expect(result).toBe('Я встретил кого-то неизвестного')
+  it('should throw error for unknown character', () => {
+    expect(() => {
+      kolobok('неизвестный')
+    }).toThrow('Я встретил кого-то неизвестного')
   })
 })
 

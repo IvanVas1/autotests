@@ -7,7 +7,7 @@ export function kolobok(character) {
     case 'лиса':
       return 'Меня съели'
     default:
-      return 'Я встретил кого-то неизвестного'
+      throw new Error('Я встретил кого-то неизвестного')
   }
 }
 
