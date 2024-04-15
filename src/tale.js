@@ -17,6 +17,6 @@ export function newYear(character) {
     case 'Снегурочка':
       return `${character}! ${character}! ${character}!`
     default:
-      return 'Неизвестный персонаж'
+      throw new Error('Неизвестный персонаж')
   }
 }

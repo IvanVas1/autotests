@@ -35,7 +35,8 @@ describe('newYear function', () => {
   })
 
   it('should return a default response for unknown character', () => {
-    const result = newYear('неизвестный')
-    expect(result).toBe('Неизвестный персонаж')
+    expect(() => {
+      newYear('неизвестный')
+    }).toThrow('Неизвестный персонаж')
   })
 })
