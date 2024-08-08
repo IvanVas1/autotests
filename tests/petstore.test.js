@@ -1,5 +1,4 @@
 import config from '../fraemwork/config'
-
 const request = require('supertest')
 
 describe('Тестирование сервиса Petstore', () => {
