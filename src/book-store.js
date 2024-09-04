@@ -26,7 +26,7 @@ const createBook = async (token, userId, isbn) => {
   return response
 }
 
-const getBook = async (isbn) => {
+const getBook = async isbn => {
   const response = await supertest(config.baseUrl)
     .get('/BookStore/v1/Book')
     .query({ ISBN: `${isbn}` })
