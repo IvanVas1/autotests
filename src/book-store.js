@@ -11,46 +11,46 @@ const generateToken = async (userName, password) => {
   return response
 }
 
-const createBook = async token => {
+const createBook = async (token, userId, isbn) => {
   const response = await supertest(config.baseUrl)
     .post('/BookStore/v1/Books')
     .set('Authorization', `Bearer ${token}`)
     .send({
-      userId: config.userId,
+      userId: `${userId}`,
       collectionOfIsbns: [
         {
-          isbn: config.testIsbn,
+          isbn: `${isbn}`,
         },
       ],
     })
   return response
 }
 
-const getBook = async ISBN => {
+const getBook = async (isbn) => {
   const response = await supertest(config.baseUrl)
     .get('/BookStore/v1/Book')
-    .query({ ISBN: `${ISBN}` })
+    .query({ ISBN: `${isbn}` })
   return response
 }
 
-const updateBook = async (token, ISBN) => {
+const updateBook = async (token, isbn1, userId, isbnUpdate) => {
   const response = await supertest(config.baseUrl)
-    .put(`/BookStore/v1/Books/${ISBN}`)
+    .put(`/BookStore/v1/Books/${isbn1}`)
     .set('Authorization', `Bearer ${token}`)
     .send({
-      userId: config.userId,
-      isbn: config.testIsbn2,
+      userId: `${userId}`,
+      isbn: `${isbnUpdate}`,
     })
   return response
 }
 
-const deleteBook = async token => {
+const deleteBook = async (token, isbn, userId) => {
   const response = await supertest(config.baseUrl)
     .delete('/BookStore/v1/Book')
     .set('Authorization', `Bearer ${token}`)
     .send({
-      isbn: config.testIsbn2,
-      userId: config.userId,
+      isbn: `${isbn}`,
+      userId: `${userId}`,
     })
   return response
 }
