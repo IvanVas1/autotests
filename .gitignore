@@ -2,3 +2,7 @@ node_modules
 coverage
 .idea
 build
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
